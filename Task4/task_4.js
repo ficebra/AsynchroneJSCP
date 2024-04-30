@@ -11,8 +11,9 @@ async function concurrentRequests(){
             return Promise.all(values.map(r => r.json()));
         })
         .then(([data1, data2]) => {
-            console.log(data1);
+            console.log("Country : "+data1.country+" | Place Name : "+data1.places[0].latitude);
             console.log(data2);
         })
-        console.log(result);
 }
+
+concurrentRequests()
